@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Green Plaza Sports Complex</title>
+  <title>Contact - GPSC</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <header>
     <div class="container header-container">
-      <div class="logo">
-        <img src="images/logo.jpeg" alt="GPSC Logo">
-      </div>
+      <div class="logo"><img src="images/logo.jpeg" alt="GPSC"></div>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -22,219 +21,103 @@
           <li><a href="academies.html">Academies</a></li>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="Cafe Menu.html">Cafe Menu</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="page-header">
+  <section class="section">
     <div class="container">
-      <h1>Contact Us</h1>
-    </div>
-  </section>
-
-  <section class="section contact-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Get in Touch</h2>
-        <p>We're here to answer your questions and help you get started.</p>
+      <div class="section-header fade-in">
+        <h1>Get In Touch</h1>
+        <p>We are here to help you start your journey.</p>
       </div>
-      
-      <div class="contact-container">
-        <div class="contact-form-container">
-          <form class="contact-form">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" class="form-control" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" class="form-control">
-            </div>
-            
-            <div class="form-group">
-              <label for="inquiry">Inquiry Type</label>
-              <select id="inquiry" class="form-control" required>
-                <option value="" selected disabled>Select Inquiry Type</option>
-                <option value="membership">Membership Information</option>
-                <option value="programs">Programs & Classes</option>
-                <option value="facilities">Facility Booking</option>
-                <option value="events">Events & Tournaments</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" class="form-control" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="cta-btn">Send Message</button>
+
+      <!-- New Wrapper to prevent footer overlap -->
+      <div class="contact-wrapper fade-in">
+        
+        <!-- Info Column -->
+        <div class="contact-info-box">
+          <div style="margin-bottom: 40px;">
+            <h3><i class="fas fa-map-marker-alt"></i> Smouha Branch</h3>
+            <p>Inside Green Plaza Mall, Alexandria</p>
+          </div>
+          <div style="margin-bottom: 40px;">
+            <h3><i class="fas fa-map-pin"></i> Almontazah Branch</h3>
+            <p>Coming Soon (Late 2025)</p>
+          </div>
+          <div style="margin-bottom: 40px;">
+            <h3><i class="fas fa-phone-alt"></i> Phone</h3>
+            <p>01201217377</p>
+          </div>
+          <div style="margin-bottom: 40px;">
+            <h3><i class="fas fa-clock"></i> Working Hours</h3>
+            <p>Daily: 8:00 AM - 12:00 AM</p>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-box">
+          <form>
+            <input type="text" class="form-input" placeholder="Your Name" required>
+            <input type="email" class="form-input" placeholder="Your Email" required>
+            <select class="form-input" style="height: 55px;">
+              <option>Membership Inquiry</option>
+              <option>Academy Booking</option>
+              <option>Almontazah Info</option>
+            </select>
+            <textarea class="form-input" rows="5" placeholder="Message"></textarea>
+            <button class="cta-btn" style="width:100%; border:none; cursor:pointer;">Send Message</button>
           </form>
         </div>
-        
-        <div class="contact-info-container">
-          <div class="contact-info">
-            <div class="contact-item fade-in">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Location</h3>
-                <p>Inside Green Plaza Mall, Smouha, Alexandria, Egypt</p>
-              </div>
-            </div>
-            
-            <div class="contact-item fade-in">
-              <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Phone</h3>
-                <p>01201217377</p>
-              </div>
-            </div>
-            
-            <div class="contact-item fade-in">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Email</h3>
-                <p>info@gpsportscomplex.com</p>
-              </div>
-            </div>
-            
-            <div class="contact-item fade-in">
-              <div class="contact-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Operating Hours</h3>
-                <p>Monday - Friday: 8:00 AM - 10:00 PM</p>
-                <p>Saturday - Sunday: 9:00 AM - 8:00 PM</p>
-              </div>
-            </div>
-            
-            <div class="social-links contact-social">
-              <h3>Connect With Us</h3>
-              <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="section map-section">
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.5087646348677!2d29.94142491511577!3d31.214310981474206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c47e9e9d977d%3A0x95bb6df3b3f3a1a8!2sGreen%20Plaza%20Mall!5e0!3m2!1sen!2seg!4v1622032000000!5m2!1sen!2seg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+  <!-- Map separate section -->
+  <section style="height: 400px; width: 100%;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.5087646348677!2d29.94142491511577!3d31.214310981474206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c47e9e9d977d%3A0x95bb6df3b3f3a1a8!2sGreen%20Plaza%20Mall!5e0!3m2!1sen!2seg!4v1622032000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
-  <section class="section faq-section" style="background-color: var(--secondary-color);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-        <p>Find quick answers to common questions about GPSC.</p>
-      </div>
-      
-      <div class="faq-container">
-        <div class="faq-item fade-in">
-          <div class="faq-question">
-            <h3>What are your membership options?</h3>
-            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>We offer daily passes, monthly memberships, and annual memberships with various benefits. Visit our Membership page for detailed information on pricing and included features.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item fade-in">
-          <div class="faq-question">
-            <h3>Do you offer programs for children?</h3>
-            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, we have programs for children of all ages, starting from as young as 4 years old. Our youth programs include swimming, football, basketball, gymnastics, and more.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item fade-in">
-          <div class="faq-question">
-            <h3>How can I book a facility?</h3>
-            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>Facility booking can be done through our reception desk, by phone, or through our online booking system. Members receive priority booking privileges.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item fade-in">
-          <div class="faq-question">
-            <h3>Are there certified coaches for all sports?</h3>
-            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, all our programs are led by certified coaches with extensive experience in their respective sports. Many of our coaches have international certifications and competitive backgrounds.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- Clean Footer -->
   <footer>
     <div class="container">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="images/logo.jpeg" alt="GPSC Logo">
-          <p>A multi-sport experience that builds a stronger, inclusive community.</p>
-          <div class="social-links">
+      <div class="footer-content">
+        <div class="footer-logo-col">
+          <img src="images/logo.jpeg" alt="GPSC">
+          <p style="color: #666; font-size: 0.9rem;">Building a stronger, inclusive community through sports and excellence.</p>
+          <div class="social-icons">
             <a href="https://www.facebook.com/GPScomplex" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/gpsportscomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@gpsportscomplex" target="_blank"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        
-        <div class="footer-links">
-          <h3>Quick Links</h3>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="academies.html">Academies</a></li>
             <li><a href="membership.html">Membership</a></li>
           </ul>
         </div>
-        
-        <div class="footer-links">
-          <h3>Contact Us</h3>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
           <ul>
-            <li>📍 Inside Green Plaza Mall, Smouha, Alexandria, Egypt</li>
-            <li>📞 01201217377</li>
-            <li>✉️ info@gpsportscomplex.com</li>
+            <li><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Green Plaza Mall, Alexandria</li>
+            <li><i class="fas fa-phone" style="color:var(--primary)"></i> 01201217377</li>
           </ul>
         </div>
       </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 Green Plaza Sports Complex. All rights reserved.</p>
+      <div style="text-align: center; color: #555; font-size: 0.8rem;">
+        &copy; 2025 Green Plaza Sports Complex.
       </div>
     </div>
   </footer>
+
+  <a href="https://wa.me/201201217377" style="position:fixed; bottom:30px; right:30px; background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:30px; z-index:9999; box-shadow:0 5px 15px rgba(0,0,0,0.2);"><i class="fab fa-whatsapp"></i></a>
 
   <script src="js/script.js"></script>
 </body>

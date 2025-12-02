@@ -5,24 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Green Plaza Sports Complex</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <header>
     <div class="container header-container">
-      <div class="logo">
-        <img src="images/logo.jpeg" alt="GPSC Logo">
-      </div>
+      <div class="logo"><img src="images/logo.jpeg" alt="GPSC"></div>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="facilities.html">Facilities</a></li>
           <li><a href="academies.html">Academies</a></li>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="Cafe Menu.html">Cafe Menu</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -30,174 +28,111 @@
   </header>
 
   <section class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content container">
-        <h1>YOUR ALL IN ONE DESTINATION</h1>
-        <p>Do it together. Your own way.</p>
-        <a href="membership.html" class="cta-btn">Join the Movement</a>
+    <div class="container">
+      <h1 class="fade-in">DO IT TOGETHER.<br>YOUR OWN WAY.</h1>
+      <p class="fade-in">Alexandria's Premier Multi-Sport Destination.</p>
+      <div style="margin-top: 30px;">
+        <a href="membership.html" class="cta-btn fade-in">Join The Movement</a>
       </div>
     </div>
   </section>
 
-  <section class="stats">
-    <div class="container stats-container">
-      <div class="stat-item fade-in">
-        <div class="stat-number" data-count="1600">1,6M</div>
-        <div class="stat-label">Annual Visitors</div>
-      </div>
-      <div class="stat-item fade-in">
-        <div class="stat-number" data-count="6000000">6000m²</div>
-        <div class="stat-label">m² Facility</div>
-      </div>
-      <div class="stat-item fade-in">
-        <div class="stat-number" data-count="12">12</div>
-        <div class="stat-label">Sports Offered</div>
-      </div>
-    </div>
-  </section>
-
+  <!-- New Section to add length -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>About GPSC</h2>
-        <p>Located in Alexandria, GPSC is a 6,000m² facility offering top-tier training and vibrant sports activities for all.</p>
+      <div class="section-header fade-in">
+        <h2>Why Choose GPSC?</h2>
+        <p>More than just a gym. We are a community built on excellence.</p>
       </div>
-      
-      <div class="card-grid">
-        <div class="card slide-up">
-          <div class="card-img">
-            <img src="images/Tennis.jpeg" alt="Facilities">
-          </div>
-          <div class="card-content">
-            <h3>Facilities</h3>
-            <p>Explore our world-class sports facilities designed for performance and enjoyment.</p>
-            <a href="facilities.html" class="link-btn">Discover More</a>
+      <div class="grid-system">
+        <div class="modern-card fade-in">
+          <div class="card-details" style="text-align: center;">
+            <i class="fas fa-users" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <h3>Inclusive Community</h3>
+            <p>From beginners to pro athletes, everyone has a place here.</p>
           </div>
         </div>
-        
-        <div class="card slide-up">
-          <div class="card-img">
-            <img src="images/Gymnastics.jpeg" alt="Programs">
-          </div>
-          <div class="card-content">
-            <h3>Programs</h3>
-            <p>Join our specialized training programs led by certified coaches and professionals.</p>
-            <a href="programs.html" class="link-btn">View Programs</a>
+        <div class="modern-card fade-in">
+          <div class="card-details" style="text-align: center;">
+            <i class="fas fa-dumbbell" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <h3>Elite Equipment</h3>
+            <p>Technogym gear, Olympic pools, and FIFA standard turf.</p>
           </div>
         </div>
-        
-        <div class="card slide-up">
-          <div class="card-img">
-            <img src="images/Basketball.jpeg" alt="Membership">
-          </div>
-          <div class="card-content">
-            <h3>Membership</h3>
-            <p>Become part of our community with flexible membership options for all ages.</p>
-            <a href="membership.html" class="link-btn">Join Now</a>
+        <div class="modern-card fade-in">
+          <div class="card-details" style="text-align: center;">
+            <i class="fas fa-certificate" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <h3>Certified Coaches</h3>
+            <p>Train with the best. Our academies produce champions.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
- <section class="testimonials section">
+  <!-- Almontazah Branch Highlight (Big Section) -->
+  <section class="section" style="background: #f1f1f1;">
     <div class="container">
-      <div class="section-header">
-        <h2>What Our Members Say</h2>
-        <p>Hear from the community that makes GPSC special.</p>
+      <div class="section-header fade-in">
+        <h2>Expanding Our Legacy</h2>
       </div>
-      
-      <div class="testimonial-slider">
-        <div class="testimonial-card" style="display: block;">
-          <div class="testimonial-content">
-            <p>"GPSC has transformed my training routine. The facilities are world-class and the coaches are incredibly supportive. I've improved more in 6 months here than in years elsewhere."</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="images/Mohamed Ahmed.jpeg" alt="Member">
-            <div class="author-info">
-              <h4>Mohamed Ahmed</h4>
-              <p>Tennis Academy Member</p>
-            </div>
-          </div>
+      <div class="branch-highlight fade-in">
+        <div class="branch-text">
+          <span style="color: var(--primary); font-weight: bold; letter-spacing: 2px;">COMING SOON</span>
+          <h2 style="margin-top: 10px;">GPSC Almontazah</h2>
+          <p>We are bringing the vibe to Almontazah. A massive new complex featuring Padel courts, Combat Sports Arena, and a Semi-Olympic pool.</p>
+          <ul style="color: #ccc; margin-bottom: 30px; list-style: none;">
+            <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Premium Location</li>
+            <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Advanced Recovery Center</li>
+            <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Opening Late 2025</li>
+          </ul>
+          <a href="contact.html" class="cta-btn">Get Updates</a>
         </div>
-      <div class="testimonial-card" style="display: none;">
-        <div class="testimonial-content">
-          <p>"As a parent, I'm impressed by the quality of coaching and the safe environment GPSC provides. My children have developed not just athletic skills but also confidence and discipline."</p>
+        <div class="branch-img-wrapper">
+          <img src="images/hero.jpg" class="branch-img" alt="New Branch">
         </div>
-        <div class="testimonial-author">
-          <img src="images/layla.jpeg" alt="Laila Ibrahim">
-          <div class="author-info">
-            <h4>Laila Ibrahim</h4>
-            <p>Parent of Junior Members</p>
-          </div>
-        </div>
-      </div><div class="testimonial-card" style="display: none;">
-        <div class="testimonial-content">
-          <p>"The community at GPSC is what sets it apart. I've made great friends while improving my fitness. The staff go above and beyond to make everyone feel welcome."</p>
-        </div>
-        <div class="testimonial-author">
-          <img src="images/ahmed.jpeg" alt="Ahmed Karim">
-          <div class="author-info">
-            <h4>Ahmed Karim</h4>
-            <p>Monthly Member</p>
-          </div>
-        </div>
-      </div></div>
-    </div>
-  </section>
-
-  <section class="partners section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Partners</h2>
-        <p>We collaborate with the best to deliver excellence.</p>
-      </div>
-      
-        <div class="partners-showcase">
-        <img src="images/partenerslogos.png" alt="Partner Logos" class="partners-banner">
       </div>
     </div>
   </section>
 
-   <footer>
+  <!-- Standard Footer -->
+  <footer>
     <div class="container">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="images/logo.jpeg" alt="GPSC Logo">
-          <p>A multi-sport experience that builds a stronger, inclusive community.</p>
-          <div class="social-links">
+      <div class="footer-content">
+        <div class="footer-logo-col">
+          <img src="images/logo.jpeg" alt="GPSC">
+          <p style="color: #666; font-size: 0.9rem;">Building a stronger, inclusive community through sports and excellence.</p>
+          <div class="social-icons">
             <a href="https://www.facebook.com/GPScomplex" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/gpsportscomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@gpsportscomplex" target="_blank"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        
-        <div class="footer-links">
-          <h3>Quick Links</h3>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="academies.html">Academies</a></li>
             <li><a href="membership.html">Membership</a></li>
           </ul>
         </div>
-        
-        <div class="footer-links">
-          <h3>Contact Us</h3>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
           <ul>
-            <li>📍 Inside Green Plaza Mall, Smouha, Alexandria, Egypt</li>
-            <li>📞 01201217377</li>
-            <li>✉️ info@gpsportscomplex.com</li>
+            <li><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Green Plaza Mall, Alexandria</li>
+            <li><i class="fas fa-phone" style="color:var(--primary)"></i> 01201217377</li>
+            <li><i class="fas fa-envelope" style="color:var(--primary)"></i> info@gpsportscomplex.com</li>
           </ul>
         </div>
       </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 Green Plaza Sports Complex. All rights reserved.</p>
+      <div style="text-align: center; color: #555; font-size: 0.8rem;">
+        &copy; 2025 Green Plaza Sports Complex. All rights reserved.
       </div>
     </div>
   </footer>
+
+  <a href="https://wa.me/201201217377" style="position:fixed; bottom:30px; right:30px; background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:30px; z-index:9999; box-shadow:0 5px 15px rgba(0,0,0,0.2);"><i class="fab fa-whatsapp"></i></a>
 
   <script src="js/script.js"></script>
 </body>

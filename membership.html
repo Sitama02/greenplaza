@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Membership - Green Plaza Sports Complex</title>
+  <title>Membership - GPSC</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <header>
     <div class="container header-container">
-      <div class="logo">
-        <img src="images/logo.jpeg" alt="GPSC Logo">
-      </div>
+      <div class="logo"><img src="images/logo.jpeg" alt="GPSC"></div>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -22,310 +21,155 @@
           <li><a href="academies.html">Academies</a></li>
           <li><a href="membership.html" class="active">Membership</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="Cafe Menu.html">Cafe Menu</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="page-header">
-    <div class="container">
-      <h1>Membership</h1>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Join Our Community</h2>
-        <p>Become part of Alexandria's premier sports complex with flexible membership options for all.</p>
+      <div class="section-header fade-in">
+        <h1>Join The Community</h1>
+        <p>Choose the plan that fits your lifestyle.</p>
       </div>
-      
-      <div class="membership-tiers">
-        <div class="tier-card fade-in">
-          <div class="tier-header">
-            <h3>Individual Membership</h3>
-            <div class="tier-price">
-              <span class="currency">EGP</span>
-              <span class="amount">20000</span>
-              <span class="period">/year</span>
-            </div>
-          </div>
-          <div class="tier-content">
-            <ul class="tier-features">
-              <li><i class="fas fa-check"></i> Full gym access for 1 person</li>
-              <li><i class="fas fa-check"></i> 4 daily/hours access to the swimming pool</li>
-              <li><i class="fas fa-check"></i> 15 sessions at Premedion recovery</li>
-              <li><i class="fas fa-check"></i> 25% discount on academy programs</li>
-              <li><i class="fas fa-check"></i> full access to Alexandria Shooting club Qaitbay</li>
-            </ul>
-            <a href="#membership-form" class="cta-btn">join us</a>
-          </div>
-        </div>
-        
-        <div class="tier-card featured fade-in">
-          <div class="tier-header">
-            <h3>Family Membership</h3>
-            <div class="tier-price">
-              <span class="currency">EGP</span>
-              <span class="amount">35000</span>
-              <span class="period">/year</span>
-            </div>
-          </div>
-          <div class="tier-content">
-            <ul class="tier-features">
-              <li><i class="fas fa-check"></i> 2 Members full access to the gym</li>
-              <li><i class="fas fa-check"></i> 1 academy for free</li>
-              <li><i class="fas fa-check"></i> Parking free</li>
-              <li><i class="fas fa-check"></i> 25% discount on academy programs</li>
-              <li><i class="fas fa-check"></i> 4 daily/hours access to the swimming pool</li>
-              <li><i class="fas fa-check"></i> 25 sessions at Premedion recovery</li>
-              <li><i class="fas fa-check"></i> full access to Alexandria Shooting club Qaitbay</li> 
-            </ul>
-            <a href="#membership-form" class="cta-btn">Join Us</a>
-          </div>
-        </div>
-        
-        <div class="tier-card fade-in">
-            <div class="tier-badge">Most Popular</div>
-            <div class="tier-header">
-            <h3>Buddies Membership</h3>
-            <div class="tier-price">
-              <span class="currency">EGP</span>
-              <span class="amount">31000</span>
-              <span class="period">/year</span>
-            </div>
-          </div>
-          <div class="tier-content">
-            <ul class="tier-features">
-              <li><i class="fas fa-check"></i> Sherable between 2 friends</li>
-              <li><i class="fas fa-check"></i> 2 Members full access to the gym</li>
-              <li><i class="fas fa-check"></i> Parking free</li>
-              <li><i class="fas fa-check"></i> 25% discount on academy programs</li>
-              <li><i class="fas fa-check"></i> 4 daily/hours access to the swimming pool</li>
-              <li><i class="fas fa-check"></i> 15 sessions at Premedion recovery</li>
-              <li><i class="fas fa-check"></i> full access to Alexandria Shooting club Qaitbay</li>
-            </ul>
-            <a href="#membership-form" class="cta-btn">Join Us</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section membership-benefits" style="background-color: var(--secondary-color);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Membership Benefits</h2>
-        <p>Experience the advantages of being part of the GPSC community.</p>
-      </div>
-      
-      <div class="benefits-grid">
-        <div class="benefit-item fade-in">
-          <div class="benefit-icon">
-            <i class="fas fa-dumbbell"></i>
-          </div>
-          <h3>Full Facility Access</h3>
-          <p>Enjoy unlimited access to all our world-class sports facilities during operating hours.</p>
-        </div>
+      <!-- Pricing Cards -->
+      <div class="grid-system" style="margin-bottom: 80px;">
         
-        <div class="benefit-item fade-in">
-          <div class="benefit-icon">
-            <i class="fas fa-calendar-check"></i>
+        <!-- Individual -->
+        <div class="modern-card fade-in" style="border-top: 5px solid var(--primary);">
+          <div class="card-details" style="text-align: center;">
+            <h3>Individual</h3>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--dark); margin: 20px 0;">20,000 <span style="font-size: 1rem; color: #888;">EGP/Year</span></div>
+            <ul style="text-align: left; margin-bottom: 30px; list-style: none;">
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> Full Gym Access</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> 4 Pool Hours/Day</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> 15 Recovery Sessions</li>
+            </ul>
+            <a href="#join-form" class="cta-btn" style="width: 100%;">Choose Plan</a>
           </div>
-          <h3>Priority Bookings</h3>
-          <p>Reserve courts, classes, and facilities before they open to the general public.</p>
         </div>
-        
-        <div class="benefit-item fade-in">
-          <div class="benefit-icon">
-            <i class="fas fa-percentage"></i>
-          </div>
-          <h3>Special Discounts</h3>
-          <p>Enjoy reduced rates on academy programs, personal training, and events.</p>
-        </div>
-        
-        <div class="benefit-item fade-in">
-          <div class="benefit-icon">
-            <i class="fas fa-user-friends"></i>
-          </div>
-          <h3>Guest Privileges</h3>
-          <p>Bring friends and family to experience GPSC with complimentary guest passes.</p>
-        </div>
-        
-        <div class="benefit-item fade-in">
-          <div class="benefit-icon">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <h3>Fitness Assessment</h3>
-          <p>Receive professional evaluation and personalized recommendations for your fitness journey.</p>
-        </div>
-        
-        <div class="benefit-item fade-in">
-          <div class="benefit-icon">
-            <i class="fas fa-glass-cheers"></i>
-          </div>
-          <h3>Member Events</h3>
-          <p>Access exclusive social gatherings, competitions, and community activities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section demographics-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Community</h2>
-        <p>GPSC welcomes members of all ages, backgrounds, and fitness levels.</p>
-      </div>
-      
-      <div class="demographics-content">
-        <div class="demographics-info fade-in">
-          <h3>A Diverse Community</h3>
-          <p>At GPSC, we pride ourselves on creating an inclusive environment where everyone feels welcome. Our membership spans all age groups, from children taking their first steps in sports to seniors maintaining active lifestyles.</p>
-          <p>With a near-equal gender distribution and members from various backgrounds, GPSC truly represents the diverse community of Alexandria.</p>
-          <ul class="demographics-stats">
-            <li><strong>Age Range:</strong> 4-75 years</li>
-            <li><strong>Gender Distribution:</strong> 55% male, 45% female</li>
-            <li><strong>Family Memberships:</strong> 40% of our members</li>
-            <li><strong>Competitive Athletes:</strong> 25% of our community</li>
-          </ul>
+        <!-- Family (Highlighted) -->
+        <div class="modern-card fade-in" style="transform: scale(1.05); border: 2px solid var(--primary); box-shadow: 0 20px 50px rgba(46, 204, 113, 0.2);">
+          <div style="background: var(--primary); color: white; text-align: center; padding: 5px; font-weight: bold;">MOST POPULAR</div>
+          <div class="card-details" style="text-align: center;">
+            <h3>Family</h3>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--dark); margin: 20px 0;">35,000 <span style="font-size: 1rem; color: #888;">EGP/Year</span></div>
+            <ul style="text-align: left; margin-bottom: 30px; list-style: none;">
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> 2 Adults Full Access</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> 1 Free Academy</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> 25 Recovery Sessions</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> Free Parking</li>
+            </ul>
+            <a href="#join-form" class="cta-btn" style="width: 100%;">Choose Plan</a>
+          </div>
         </div>
-        <div class="demographics-chart slide-up">
-          <img src="images/hero.jpg" alt="Member Demographics" class="placeholder-chart">
-          <p class="chart-caption">Our diverse membership community</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="membership-form" class="section form-section" style="background-color: var(--primary-color); color: var(--light-text);">
-    <div class="container">
-      <div class="section-header">
-        <h2 style="color: var(--light-text);">Become a Member Today</h2>
-        <p>Fill out the form below to start your GPSC journey.</p>
+        <!-- Buddies -->
+        <div class="modern-card fade-in" style="border-top: 5px solid var(--primary);">
+          <div class="card-details" style="text-align: center;">
+            <h3>Buddies</h3>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--dark); margin: 20px 0;">31,000 <span style="font-size: 1rem; color: #888;">EGP/Year</span></div>
+            <ul style="text-align: left; margin-bottom: 30px; list-style: none;">
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> Shareable (2 Friends)</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> Full Gym Access</li>
+              <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color:var(--primary); margin-right:10px;"></i> 15 Recovery Sessions</li>
+            </ul>
+            <a href="#join-form" class="cta-btn" style="width: 100%;">Choose Plan</a>
+          </div>
+        </div>
+
       </div>
-      
-      <div class="form-container">
-        <form class="membership-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" class="form-control" required>
-            </div>
-          </div>
+
+      <!-- MEMBERSHIP FORM START -->
+      <div id="join-form" class="fade-in" style="background: white; border: 1px solid #eee; display: block; max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); color: #111;">
+        
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 style="color: #111;">Application Form</h2>
+          <p style="color: #555;">Fill out the details below and our team will contact you within 24 hours.</p>
+        </div>
+
+        <!-- 
+           REMEMBER: PASTE YOUR FORMSPREE LINK IN THE ACTION ATTRIBUTE BELOW 
+        -->
+        <form action="https://formspree.io/f/xyzrjykb" method="POST" style="display: grid; gap: 20px;">
           
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" class="form-control" required>
-            </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <input type="text" name="first_name" class="form-input" placeholder="First Name" style="color: #333;" required>
+            <input type="text" name="last_name" class="form-input" placeholder="Last Name" style="color: #333;" required>
           </div>
-          
-          <div class="form-group">
-            <label for="membershipType">Membership Type</label>
-            <select id="membershipType" class="form-control" required>
-              <option value="" selected disabled>Select Membership Type</option>
-              <option value="Individual">individual Membership</option>
-              <option value="Family">Family Membership</option>
-              <option value="Buddies">Buddies Membership</option>
-            </select>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <input type="email" name="email" class="form-input" placeholder="Email Address" style="color: #333;" required>
+            <input type="tel" name="phone" class="form-input" placeholder="Phone Number" style="color: #333;" required>
           </div>
-          
-          <div class="form-group">
-            <label for="interests">Interests (Select all that apply)</label>
-            <div class="checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="fitness"> Fitness & Gym
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="swimming"> Swimming
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="tennis"> Tennis
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="basketball"> Basketball
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="football"> Football
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="martial-arts"> Martial Arts
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="gymnastics"> Gymnastics
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="interests" value="skating"> Skating
-              </label>
+
+          <select name="membership_type" class="form-input" style="height: 55px; color: #333;" required>
+            <option value="" disabled selected>Select Membership Type</option>
+            <option value="Individual">Individual Membership</option>
+            <option value="Family">Family Membership</option>
+            <option value="Buddies">Buddies Membership</option>
+          </select>
+
+          <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+            <label style="font-weight: bold; display: block; margin-bottom: 15px; color: #111;">I am interested in:</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; color: #333;">
+              <label><input type="checkbox" name="interest" value="Gym"> Gym & Fitness</label>
+              <label><input type="checkbox" name="interest" value="Swimming"> Swimming</label>
+              <label><input type="checkbox" name="interest" value="Tennis"> Tennis</label>
+              <label><input type="checkbox" name="interest" value="Football"> Football</label>
+              <label><input type="checkbox" name="interest" value="Combat"> Combat Sports</label>
             </div>
           </div>
-          
-          <div class="form-group">
-            <label for="message">Additional Information</label>
-            <textarea id="message" class="form-control" rows="4"></textarea>
-          </div>
-          
-          <div class="form-group form-check">
-            <input type="checkbox" id="terms" class="form-check-input" required>
-            <label for="terms" class="form-check-label">I agree to the terms and conditions</label>
-          </div>
-          
-          <button type="submit" class="cta-btn">Submit Application</button>
+
+          <textarea name="message" class="form-input" rows="4" placeholder="Any additional questions or notes?" style="color: #333;"></textarea>
+
+          <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">Submit Application</button>
         </form>
       </div>
+      <!-- MEMBERSHIP FORM END -->
+
     </div>
   </section>
 
-   <footer>
+  <footer>
     <div class="container">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="images/logo.jpeg" alt="GPSC Logo">
-          <p>A multi-sport experience that builds a stronger, inclusive community.</p>
-          <div class="social-links">
+      <div class="footer-content">
+        <div class="footer-logo-col">
+          <img src="images/logo.jpeg" alt="GPSC">
+          <p style="color: #666; font-size: 0.9rem;">Building a stronger, inclusive community through sports and excellence.</p>
+          <div class="social-icons">
             <a href="https://www.facebook.com/GPScomplex" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/gpsportscomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@gpsportscomplex" target="_blank"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        
-        <div class="footer-links">
-          <h3>Quick Links</h3>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="academies.html">Academies</a></li>
             <li><a href="membership.html">Membership</a></li>
           </ul>
         </div>
-        
-        <div class="footer-links">
-          <h3>Contact Us</h3>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
           <ul>
-            <li>📍 Inside Green Plaza Mall, Smouha, Alexandria, Egypt</li>
-            <li>📞 01201217377</li>
-            <li>✉️ info@gpsportscomplex.com</li>
+            <li><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Green Plaza Mall, Alexandria</li>
+            <li><i class="fas fa-phone" style="color:var(--primary)"></i> 01201217377</li>
           </ul>
         </div>
       </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 Green Plaza Sports Complex. All rights reserved.</p>
+      <div style="text-align: center; color: #555; font-size: 0.8rem;">
+        &copy; 2025 Green Plaza Sports Complex.
       </div>
     </div>
   </footer>
+
+  <a href="https://wa.me/201201217377" style="position:fixed; bottom:30px; right:30px; background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:30px; z-index:9999; box-shadow:0 5px 15px rgba(0,0,0,0.2);"><i class="fab fa-whatsapp"></i></a>
 
   <script src="js/script.js"></script>
 </body>

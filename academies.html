@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academies & Partners - Green Plaza Sports Complex</title>
+  <title>Academies - GPSC</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <header>
     <div class="container header-container">
-      <div class="logo">
-        <img src="images/logo.jpeg" alt="GPSC Logo">
-      </div>
+      <div class="logo"><img src="images/logo.jpeg" alt="GPSC"></div>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -22,307 +21,218 @@
           <li><a href="academies.html" class="active">Academies</a></li>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="Cafe Menu.html">Cafe Menu</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="page-header">
+  <section class="hero" style="height: 60vh;">
     <div class="container">
-      <h1>Academies & Partners</h1>
+      <h1 class="fade-in">ELITE ACADEMIES</h1>
+      <p class="fade-in">Train with the best. World-class programs for every athlete.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Elite Training Partners</h2>
-        <p>GPSC collaborates with world-class academies to deliver exceptional training programs.</p>
+      <div class="section-header fade-in">
+        <h2>Our Partners</h2>
+        <p>GPSC collaborates with top-tier academies to deliver exceptional training.</p>
       </div>
       
-      <div class="partners-showcase">
-        <img src="images/GP sports complex.jpg" alt="Partner Logos" class="partners-banner">
+      <!-- Partners Banner Image -->
+      <div class="fade-in" style="margin-bottom: 60px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <img src="images/partenerslogos.png" onerror="this.src='images/GP sports complex.jpg'" alt="Partners" style="width: 100%; display: block;">
       </div>
-      
-      <div class="academies-grid">
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-1">
+
+      <!-- ACADEMIES GRID -->
+      <div class="grid-system">
+
+        <!-- Academy 1 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/momo.jpg" alt="The Barn">
+          </div>
+          <div class="card-details">
             <h3>The Barn</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-1">
-            <div class="academy-info">
-              <p>A state-of-the-art hybrid gym offering personalized training programs, group fitness classes, and specialized strength and conditioning services.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Inclusive group workouts</li>
-                <li><i class="fas fa-check"></i> Challenge-based programs</li>
-                <li><i class="fas fa-check"></i> Community events</li>
-                <li><i class="fas fa-check"></i> Holistic approach to fitness</li>
-              </ul>
-            </div>
+            <p>State-of-the-art hybrid gym offering personalized training and strength conditioning.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Hybrid Training</li>
+              <li><i class="fas fa-check"></i> Group Classes</li>
+              <li><i class="fas fa-check"></i> Challenge Programs</li>
+            </ul>
           </div>
         </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-2">
+
+        <!-- Academy 2 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Rugby.jpeg" alt="FootFit">
+          </div>
+          <div class="card-details">
             <h3>FootFit</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-2">
-            <div class="academy-info">
-              <p>Specialized football training academy focusing on technical skills, tactical awareness, and physical conditioning for players of all ages.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> New programes for adults</li>
-                <li><i class="fas fa-check"></i> Age-specific programs</li>
-                <li><i class="fas fa-check"></i> fun and Professional in one place </li>
-                <li><i class="fas fa-check"></i> Competitive leagues</li>
-              </ul>
-            </div>
+            <p>Specialized football training focusing on technical skills and tactical awareness.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Adult Programs</li>
+              <li><i class="fas fa-check"></i> Competitive Leagues</li>
+              <li><i class="fas fa-check"></i> Age-Specific Groups</li>
+            </ul>
           </div>
         </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-3">
+
+        <!-- Academy 3 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Gymnastics.jpeg" alt="DOJO">
+          </div>
+          <div class="card-details">
             <h3>DOJO Egypt</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-3">
-            <div class="academy-info">
-              <p>Premier martial arts academy offering training in multiple disciplines including Karate, Judo, Taekwondo, and MMA with certified instructors.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> International certifications</li>
-                <li><i class="fas fa-check"></i> Belt progression system</li>
-                <li><i class="fas fa-check"></i> Competition preparation</li>
-                <li><i class="fas fa-check"></i> Self-defense programs</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-       
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-4">
-            <h3>AK Swimming Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-4">
-            <div class="academy-info">
-              <p>always focused on having pathways that support the development of every swimmer to reach their true swimming potential </p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Long-Term Athlete Development Plan</li>
-                <li><i class="fas fa-check"></i> three pathways that allow an opportunity for each swimmer to develop</li>
-                <li><i class="fas fa-check"></i> Fifty-seven swimmers national team</li>
-                <li><i class="fas fa-check"></i> Eight world champions</li>
-              </ul>
-            </div>
+            <p>Premier martial arts academy: Karate, Judo, Taekwondo, and MMA.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Self Defense</li>
+              <li><i class="fas fa-check"></i> Belt System</li>
+              <li><i class="fas fa-check"></i> Certified Coaches</li>
+            </ul>
           </div>
         </div>
 
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-5">
+        <!-- Academy 4 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Swimming.jpeg" alt="AK Swimming">
+          </div>
+          <div class="card-details">
+            <h3>AK Swimming</h3>
+            <p>Pathways that support the development of every swimmer to reach their potential.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> 8 World Champions</li>
+              <li><i class="fas fa-check"></i> National Team Prep</li>
+              <li><i class="fas fa-check"></i> Athlete Development</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Academy 5 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Basketball.jpeg" alt="Guru">
+          </div>
+          <div class="card-details">
             <h3>Guru Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-5">
-            <div class="academy-info">
-              <p>Elite basketball training academy developing players through advanced techniques, tactical understanding, and competitive play.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> FIBA-certified coaches</li>
-                <li><i class="fas fa-check"></i> Position-specific training</li>
-                <li><i class="fas fa-check"></i> League participation</li>
-                <li><i class="fas fa-check"></i> College recruitment support</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-6">
-            <h3>Elevate Padel Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-6">
-            <div class="academy-info">
-              <p>IPF-accredited padel tennis academy offering professional coaching, tournaments, and social play for all skill levels.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Professional Training</li>
-                <li><i class="fas fa-check"></i> Professional coaching</li>
-                <li><i class="fas fa-check"></i> Regular tournaments</li>
-                <li><i class="fas fa-check"></i> Social leagues</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-7">
-            <h3>Real Madrid School</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-7">
-            <div class="academy-info">
-              <p>Official Real Madrid Foundation football school teaching the methodology and values of one of the world's most successful clubs.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Real Madrid curriculum</li>
-                <li><i class="fas fa-check"></i> Spanish-trained coaches</li>
-                <li><i class="fas fa-check"></i> League participation</li>
-                <li><i class="fas fa-check"></i> Talent identification</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-8">
-            <h3>Elite Sports Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-8">
-            <div class="academy-info">
-              <p>At Elite Sports Academy's Fencing Academy, we cultivate champions through precision, discipline, and world-clas.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Making new champions</li>
-                <li><i class="fas fa-check"></i> Performance testing</li>
-                <li><i class="fas fa-check"></i> Next level performance</li>
-                <li><i class="fas fa-check"></i> Elite athlete pathways</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-9">
-            <h3>Fighters Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-9">
-            <div class="academy-info">
-              <p>Your opportunity to be champion in Rhythmic Gymnastics.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Certified FIG international coach</li>
-                <li><i class="fas fa-check"></i> best programes to make best players</li>
-                <li><i class="fas fa-check"></i> Competition preparation</li>
-                <li><i class="fas fa-check"></i> Fitness classes</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-10">
-            <h3>BSA</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-10">
-            <div class="academy-info">
-              <p>Baby Swimming Academy The first and largest academy for teaching infant and children's swimming in Egypt, and the official headquarters of the International Russian Organization.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> helping kids to be healthier</li>
-                <li><i class="fas fa-check"></i> Only babies groups</li>
-                <li><i class="fas fa-check"></i> stretch all thier muscles</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-11">
-            <h3>Wizard Skate Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-11">
-            <div class="academy-info">
-              <p>Specialized skating academy teaching inline, artistic, and speed skating techniques for recreational and competitive skaters.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Certified skating instructors</li>
-                <li><i class="fas fa-check"></i> Beginner to advanced levels</li>
-                <li><i class="fas fa-check"></i> Skill progression system</li>
-                <li><i class="fas fa-check"></i> Performance opportunities</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-12">
-            <h3>Art Corner</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="academy-content" id="academy-12">
-            <div class="academy-info">
-              <p>Creative arts space offering classes in dance, music, and visual arts to complement physical training with artistic expression.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Professional instructors</li>
-                <li><i class="fas fa-check"></i> Multiple art disciplines</li>
-                <li><i class="fas fa-check"></i> Performance showcases</li>
-                <li><i class="fas fa-check"></i> Mind-body connection focus</li>
-              </ul>
-            </div>
+            <p>Elite basketball training developing players through advanced techniques.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> FIBA Certified</li>
+              <li><i class="fas fa-check"></i> Tactical Training</li>
+              <li><i class="fas fa-check"></i> League Play</li>
+            </ul>
           </div>
         </div>
 
-        <div class="academy-item fade-in">
-          <div class="academy-header" data-toggle="academy-13">
-            <h3>Tennis Academy</h3>
-            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+        <!-- Academy 6 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Tennis.jpeg" alt="Tennis">
           </div>
-          <div class="academy-content" id="academy-13">
-            <div class="academy-info">
-              <p>the Academy was born from a shared vision: to support ambitious young players in their progression with rigor, rigor, and kindness.</p>
-              <ul class="academy-features">
-                <li><i class="fas fa-check"></i> Professional instructors</li>
-                <li><i class="fas fa-check"></i> help each player carve out their own path</li>
-                <li><i class="fas fa-check"></i> it is a tremendous lever for maturity</li>
-                <li><i class="fas fa-check"></i> Competition preparation</li>
-              </ul>
-            </div>
+          <div class="card-details">
+            <h3>Tennis Academy</h3>
+            <p>Supporting ambitious young players with rigor, discipline, and kindness.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Professional Coaches</li>
+              <li><i class="fas fa-check"></i> Competition Prep</li>
+              <li><i class="fas fa-check"></i> Player Pathways</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Academy 7 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Fencing.jpeg" alt="Fencing">
+          </div>
+          <div class="card-details">
+            <h3>Elite Fencing</h3>
+            <p>Cultivating champions through precision, discipline, and world-class fencing.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Elite Pathways</li>
+              <li><i class="fas fa-check"></i> Performance Testing</li>
+              <li><i class="fas fa-check"></i> New Champions</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Academy 8 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/Skating.jpeg" alt="Wizard Skate">
+          </div>
+          <div class="card-details">
+            <h3>Wizard Skate</h3>
+            <p>Inline, artistic, and speed skating techniques for recreational and competitive skaters.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Skill Progression</li>
+              <li><i class="fas fa-check"></i> Certified Instructors</li>
+              <li><i class="fas fa-check"></i> All Levels</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Academy 9 -->
+        <div class="modern-card fade-in">
+          <div class="card-image-holder">
+            <img src="images/hero.jpg" alt="Art Corner">
+          </div>
+          <div class="card-details">
+            <h3>Art Corner</h3>
+            <p>Creative space offering classes in dance, music, and visual arts.</p>
+            <ul style="list-style: none; font-size: 0.9rem; color: #666;">
+              <li><i class="fas fa-check"></i> Dance & Music</li>
+              <li><i class="fas fa-check"></i> Mind-Body Focus</li>
+              <li><i class="fas fa-check"></i> Professional Teachers</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-
   <footer>
     <div class="container">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="images/logo.jpeg" alt="GPSC Logo">
-          <p>A multi-sport experience that builds a stronger, inclusive community.</p>
-          <div class="social-links">
+      <div class="footer-content">
+        <div class="footer-logo-col">
+          <img src="images/logo.jpeg" alt="GPSC">
+          <p>Building a stronger, inclusive community through sports and excellence.</p>
+          <div class="social-icons">
             <a href="https://www.facebook.com/GPScomplex" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/gpsportscomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@gpsportscomplex" target="_blank"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        
-        <div class="footer-links">
-          <h3>Quick Links</h3>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="academies.html">Academies</a></li>
             <li><a href="membership.html">Membership</a></li>
           </ul>
         </div>
-        
-        <div class="footer-links">
-          <h3>Contact Us</h3>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
           <ul>
-            <li>📍 Inside Green Plaza Mall, Smouha, Alexandria, Egypt</li>
-            <li>📞 01201217377</li>
-            <li>✉️ info@gpsportscomplex.com</li>
+            <li><i class="fas fa-map-marker-alt" style="color:#bdc3c7"></i> Green Plaza Mall, Alexandria</li>
+            <li><i class="fas fa-phone" style="color:#bdc3c7"></i> 01201217377</li>
           </ul>
         </div>
       </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 Green Plaza Sports Complex. All rights reserved.</p>
+      <div style="text-align: center; color: #7f8c8d; font-size: 0.8rem;">
+        &copy; 2025 Green Plaza Sports Complex.
       </div>
     </div>
   </footer>
+
+  <a href="https://wa.me/201201217377" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
   <script src="js/script.js"></script>
 </body>
