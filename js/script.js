@@ -20,7 +20,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 2. Lightbox Logic ---
+    // --- 2. Stats Counter Animation (NEW) ---
+    const statsSection = document.querySelector('.stats-section');
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let started = false; // Function run switch
+
+    const startCount = (el) => {
+        const goal = parseInt(el.getAttribute('data-count'));
+        let count = 0;
+        const speed = 2000 / goal; // Adjust animation speed
+        
+        // Handle big numbers like 1,600,000 differently for smoothness
+        if(goal > 1000) {
+            el.innerText = goal.toLocaleString() + (el.innerText.includes('m²') ? 'm²' : '+');
+            return;
+        }
+
+        const counter = setInterval(() => {
+            count++;
+            el.innerText = count + "+";
+            if (count == goal) {
+                clearInterval(counter);
+            }
+        }, 50); // Speed of count
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+            statNumbers.forEach(stat => startCount(stat));
+            started = true;
+        }
+    });
+
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    // --- 3. Lightbox Logic ---
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     lightbox.className = 'lightbox';
@@ -30,16 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxWrapper = lightbox.querySelector('.lightbox-wrapper');
     const closeBtn = lightbox.querySelector('.close-lightbox');
 
-    // Add Click to Gallery Items ONLY
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
             const hiddenVideo = item.querySelector('video source');
             const img = item.querySelector('img');
 
-            lightboxWrapper.innerHTML = ''; // Clear content
+            lightboxWrapper.innerHTML = ''; 
 
             if (hiddenVideo) {
-                // Play Video in Lightbox
                 const newVideo = document.createElement('video');
                 newVideo.src = hiddenVideo.getAttribute('src');
                 newVideo.controls = true;
@@ -49,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 newVideo.style.maxHeight = "80vh";
                 lightboxWrapper.appendChild(newVideo);
             } else if (img) {
-                // Show Image in Lightbox
                 const newImg = document.createElement('img');
                 newImg.src = img.src;
                 newImg.className = 'lightbox-content';
@@ -59,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close Lightbox
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         lightboxWrapper.innerHTML = '';
@@ -69,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === lightbox) closeLightbox();
     });
 
-    // --- 3. Scroll Animation ---
+    // --- 4. Scroll Animation ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');

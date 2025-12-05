@@ -5,7 +5,7 @@
   --accent: #ffffff;
   
   /* --- THEME --- */
-  --dark: #001225;      /* Deep Navy */
+  --dark: #001225;
   --light: #f4f6f8;
   --white: #ffffff;
   
@@ -32,50 +32,59 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 /* --- STRUCTURE --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-.section { padding: 100px 0; }
+.section { padding: 80px 0; }
 .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
 
 /* --- HEADER & NAV --- */
 header {
   background: var(--white);
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 10px 0;
+  position: sticky; top: 0; z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 31, 63, 0.1);
 }
 .header-container { display: flex; justify-content: space-between; align-items: center; }
-.logo img { height: 65px; display: block; }
-
+.logo img { 
+  height: 60px; width: 60px; 
+  border-radius: 50%; object-fit: cover; display: block; border: 1px solid #eee; 
+}
 .nav-links { display: flex; gap: 25px; }
 .nav-links li a { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; color: var(--primary); }
 .nav-links li a:hover, .nav-links li a.active { color: var(--secondary); }
 
 /* --- HERO SECTION --- */
 .hero {
-  height: 80vh; /* Fixed Height */
+  height: 65vh;
   background: linear-gradient(rgba(0, 31, 63, 0.6), rgba(0, 31, 63, 0.8)), url('../images/hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-size: cover; background-position: center; background-attachment: fixed;
   display: flex; align-items: center; justify-content: center; text-align: center; color: white;
 }
-.hero h1, .hero p { color: #ffffff !important; } /* Force White Text */
+.hero h1, .hero p { color: #ffffff !important; }
 
-/* --- BUTTONS --- */
+/* --- ANIMATED STATS --- */
+.stats-section { background: var(--primary); color: white; padding: 60px 0; margin-top: -5px; }
+.stats-grid { display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 30px; }
+.stat-number { font-size: 3rem; font-weight: 800; color: var(--white); }
+.stat-label { font-size: 1.1rem; color: #bdc3c7; text-transform: uppercase; letter-spacing: 1px; }
+
+/* =========================================
+   BUTTONS & INPUTS (THE FIX)
+   ========================================= */
+
+/* 1. Main CTA Button (Send Message, Join, etc) */
 .cta-btn {
   display: inline-block;
   background-color: var(--primary);
   color: var(--white);
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-weight: 700;
+  padding: 16px 40px;          /* Big Padding */
+  border-radius: 50px;         /* Fully Rounded */
+  font-weight: 800;            /* Extra Bold */
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 2px solid var(--primary);
   box-shadow: 0 5px 15px rgba(0, 31, 63, 0.3);
   cursor: pointer;
   transition: var(--transition);
+  font-size: 1rem;
 }
 .cta-btn:hover { 
   background-color: var(--secondary); 
@@ -83,156 +92,121 @@ header {
   color: var(--white);
   transform: translateY(-3px);
 }
-.cta-btn.outline {
-  background: transparent; border: 2px solid var(--white); color: var(--white);
-}
+.cta-btn.outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
 .cta-btn.outline:hover { background: var(--white); color: var(--primary); }
 
+/* 2. Gallery Filter Buttons (Now Big & Bold) */
+.gallery-filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
 
-/* =========================================
-   SYSTEM 1: STANDARD CARDS (Facilities/Academies)
-   This fixes the "Chaos" on non-gallery pages
-   ========================================= */
-.grid-system {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.modern-card {
-  background: var(--white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 31, 63, 0.08);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-
-.modern-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 31, 63, 0.15); }
-
-.card-image-holder {
-  height: 250px;
-  overflow: hidden;
-}
-.card-image-holder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-.modern-card:hover .card-image-holder img { transform: scale(1.1); }
-
-.card-details { padding: 30px; flex-grow: 1; }
-.card-details h3 { color: var(--primary); }
-
-
-/* =========================================
-   SYSTEM 2: GALLERY GRID (Side-by-Side Fix)
-   This is specifically for the Gallery Page
-   ========================================= */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Side by Side */
-  gap: 20px;
-}
-
-.gallery-item {
-  height: 300px;
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
-  background: #000;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.gallery-item img, 
-.gallery-item video {
-  width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img { transform: scale(1.1); }
-
-/* Play Icon Overlay */
-.play-icon {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  font-size: 4rem; color: white; opacity: 0.9; pointer-events: none;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-/* --- LIGHTBOX (Popup) --- */
-.lightbox {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex; justify-content: center; align-items: center;
-  z-index: 10000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-}
-.lightbox.active { opacity: 1; pointer-events: all; }
-.lightbox-content {
-  max-width: 90%; max-height: 80vh; border-radius: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-.close-lightbox {
-  position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; z-index: 10001;
-}
-
-/* --- FILTERS --- */
-.gallery-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
 .filter-btn {
-  background: var(--white); color: var(--primary); border: 2px solid #ddd; padding: 8px 20px;
-  border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s;
+  background: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary); /* Visible Navy Border */
+  padding: 12px 30px;               /* Bigger Size */
+  border-radius: 50px;              /* Fully Rounded matches CTA */
+  font-weight: 700;
+  text-transform: uppercase;        /* Match CTA style */
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
 }
-.filter-btn.active, .filter-btn:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
 
+.filter-btn:hover, .filter-btn.active {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(0,31,63,0.2);
+}
 
-/* --- EXTRAS (Contact, Footer, etc) --- */
+/* 3. Contact Form Inputs (The Boxes) */
+.form-input {
+  width: 100%;
+  padding: 18px 25px;           /* Comfortable typing space */
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;    /* Clean border */
+  border-radius: 12px;          /* Soft corners */
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  transition: border 0.3s;
+}
+
+/* Force Dropdowns to be same height as text inputs */
+select.form-input {
+  height: 60px; 
+  cursor: pointer;
+}
+
+/* Hover/Focus Effects for Inputs */
+.form-input:focus { 
+  outline: none; 
+  border-color: var(--primary); /* Turns Navy when clicking */
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 31, 63, 0.1);
+}
+
+/* ========================================= */
+
+/* --- GRID SYSTEMS --- */
+.grid-system { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+
+/* Cards & Items */
+.modern-card, .gallery-item {
+  background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 31, 63, 0.08); transition: var(--transition);
+}
+.gallery-item { height: 300px; position: relative; cursor: pointer; background: #000; }
+.modern-card:hover, .gallery-item:hover { transform: translateY(-10px); }
+
+.card-image-holder { height: 250px; overflow: hidden; }
+.card-image-holder img, .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.modern-card:hover .card-image-holder img, .gallery-item:hover img { transform: scale(1.1); }
+.card-details { padding: 30px; } .card-details h3 { color: var(--primary); }
+
+.play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; pointer-events: none; }
+
+/* --- EXTRAS --- */
 .contact-wrapper {
   display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
-.form-input {
-  width: 100%; padding: 18px; margin-bottom: 20px; background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; color: #333;
-}
 
-/* Branch Highlight (Almontazah) */
 .branch-highlight {
-  background: var(--dark); color: white; padding: 50px; border-radius: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  background: var(--dark); color: white; padding: 50px; border-radius: 20px; 
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; overflow: hidden;
 }
 .branch-highlight h1, .branch-highlight h2, .branch-highlight h3 { color: #ffffff !important; }
 .branch-highlight p, .branch-highlight li { color: #dddddd !important; }
-.branch-img-wrapper img { width: 100%; border-radius: 15px; }
+.branch-img-wrapper img { width: 100%; max-width: 100%; height: auto; border-radius: 15px; }
 
 /* Footer */
 footer { background-color: var(--primary); color: #bdc3c7; padding: 80px 0 30px; }
 .footer-content { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 30px; }
-.footer-logo-col img { width: 90px; margin-bottom: 20px; border-radius: 10px; }
-.footer-col h4 { color: #fff; margin-bottom: 20px; }
+.footer-logo-col img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 2px solid rgba(255,255,255,0.1); }
 .social-icons a { margin-right: 10px; color: white; }
 
-/* WhatsApp */
-.whatsapp-float {
-  position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1001; transition: var(--transition);
-}
+/* Floating Elements */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; z-index: 1001; }
+.lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: center; align-items: center; z-index: 10000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.lightbox.active { opacity: 1; pointer-events: all; }
+.lightbox-content { max-width: 90%; max-height: 80vh; }
+.close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; z-index: 10001; }
+.fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; } .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* Animation */
-.fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-  .header-container { flex-direction: column; }
-  .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
-  .grid-system, .gallery-grid, .contact-wrapper, .footer-content, .branch-highlight { grid-template-columns: 1fr; }
-}
-/* --- HEADER LOGO (CIRCLE FIX) --- */
-.logo img { 
-  height: 70px; 
-  width: 70px;        /* Forces it to be a perfect square box first */
-  border-radius: 50%; /* Turns the square into a perfect circle */
-  object-fit: cover;  /* Ensures the logo doesn't get squashed */
-  display: block;
-  border: 1px solid #eee; /* Optional: Adds a clean border */
-}
-
-/* --- FOOTER LOGO (CIRCLE FIX) --- */
-.footer-logo-col img { 
-  width: 100px; 
-  height: 100px;       /* Forces square size */
-  border-radius: 50%;  /* Circle shape */
-  object-fit: cover;   /* Prevents stretching */
-  margin-bottom: 20px; 
-  border: 2px solid rgba(255,255,255,0.1); /* Nice border for the dark footer */
+  header { padding: 5px 0; }
+  .logo img { height: 45px; width: 45px; }
+  .nav-links { gap: 10px; font-size: 0.7rem; flex-wrap: wrap; justify-content: center; }
+  .nav-links li a { font-size: 0.8rem; }
+  .hero h1 { font-size: 2rem; }
+  .grid-system, .gallery-grid, .contact-wrapper, .footer-content, .branch-highlight { 
+    grid-template-columns: 1fr; padding: 20px; 
+  }
+  .branch-img-wrapper { order: -1; margin-bottom: 20px; }
+  .branch-highlight { padding: 30px; }
+  .stats-grid { flex-direction: column; gap: 40px; }
+  
+  /* Mobile Button Fixes */
+  .filter-btn { padding: 8px 15px; font-size: 0.75rem; }
 }
