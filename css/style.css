@@ -2,12 +2,11 @@
   /* --- BRAND COLORS --- */
   --primary: #001F3F;   /* Navy Blue */
   --secondary: #7f8c8d; /* Grey */
-  --accent: #ffffff;
+  --white: #ffffff;
   
   /* --- THEME --- */
   --dark: #001225;
   --light: #f4f6f8;
-  --white: #ffffff;
   
   --transition: all 0.3s ease-in-out;
 }
@@ -17,31 +16,47 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #333;
   background-color: var(--light);
-  overflow-x: hidden;
+  overflow-x: hidden; /* CRITICAL: Stops side-scrolling */
+  width: 100%;
 }
 
 /* --- TYPOGRAPHY --- */
-h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; color: var(--primary); }
+h1, h2, h3 { 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  letter-spacing: -0.5px; 
+  color: var(--primary);
+  word-wrap: break-word; /* Prevents long words from breaking layout */
+}
 h1 { font-size: 3.5rem; line-height: 1.1; }
 h2 { font-size: 2.5rem; margin-bottom: 1rem; }
 p { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 /* --- STRUCTURE --- */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .section { padding: 80px 0; }
 .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
 
-/* --- HEADER & NAV --- */
+/* --- HEADER (SMART SCROLL) --- */
 header {
   background: var(--white);
   padding: 10px 0;
-  position: sticky; top: 0; z-index: 1000;
+  position: sticky; 
+  top: 0; 
+  z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 31, 63, 0.1);
+  transition: transform 0.4s ease; /* smooth slide up/down */
 }
+
+/* This class is added by JS to hide the header */
+header.header-hidden {
+  transform: translateY(-100%); 
+}
+
 .header-container { display: flex; justify-content: space-between; align-items: center; }
 .logo img { 
   height: 60px; width: 60px; 
@@ -57,6 +72,7 @@ header {
   background: linear-gradient(rgba(0, 31, 63, 0.6), rgba(0, 31, 63, 0.8)), url('../images/hero.jpg');
   background-size: cover; background-position: center; background-attachment: fixed;
   display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+  padding: 0 10px; /* Safety padding */
 }
 .hero h1, .hero p { color: #ffffff !important; }
 
@@ -66,104 +82,44 @@ header {
 .stat-number { font-size: 3rem; font-weight: 800; color: var(--white); }
 .stat-label { font-size: 1.1rem; color: #bdc3c7; text-transform: uppercase; letter-spacing: 1px; }
 
-/* =========================================
-   BUTTONS & INPUTS (THE FIX)
-   ========================================= */
-
-/* 1. Main CTA Button (Send Message, Join, etc) */
+/* --- BUTTONS & INPUTS --- */
 .cta-btn {
-  display: inline-block;
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 16px 40px;          /* Big Padding */
-  border-radius: 50px;         /* Fully Rounded */
-  font-weight: 800;            /* Extra Bold */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: 2px solid var(--primary);
-  box-shadow: 0 5px 15px rgba(0, 31, 63, 0.3);
-  cursor: pointer;
-  transition: var(--transition);
+  display: inline-block; background-color: var(--primary); color: var(--white);
+  padding: 16px 40px; border-radius: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+  border: 2px solid var(--primary); box-shadow: 0 5px 15px rgba(0, 31, 63, 0.3); cursor: pointer; transition: var(--transition);
   font-size: 1rem;
 }
-.cta-btn:hover { 
-  background-color: var(--secondary); 
-  border-color: var(--secondary);
-  color: var(--white);
-  transform: translateY(-3px);
-}
+.cta-btn:hover { background-color: var(--secondary); border-color: var(--secondary); color: var(--white); transform: translateY(-3px); }
 .cta-btn.outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
 .cta-btn.outline:hover { background: var(--white); color: var(--primary); }
 
-/* 2. Gallery Filter Buttons (Now Big & Bold) */
-.gallery-filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
-
+.gallery-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
 .filter-btn {
-  background: var(--white);
-  color: var(--primary);
-  border: 2px solid var(--primary); /* Visible Navy Border */
-  padding: 12px 30px;               /* Bigger Size */
-  border-radius: 50px;              /* Fully Rounded matches CTA */
-  font-weight: 700;
-  text-transform: uppercase;        /* Match CTA style */
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: 0.3s;
-  letter-spacing: 0.5px;
+  background: var(--white); color: var(--primary); border: 2px solid var(--primary);
+  padding: 10px 25px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; cursor: pointer; transition: 0.3s;
 }
+.filter-btn:hover, .filter-btn.active { background: var(--primary); color: var(--white); }
 
-.filter-btn:hover, .filter-btn.active {
-  background: var(--primary);
-  color: var(--white);
-  box-shadow: 0 5px 15px rgba(0,31,63,0.2);
-}
-
-/* 3. Contact Form Inputs (The Boxes) */
 .form-input {
-  width: 100%;
-  padding: 18px 25px;           /* Comfortable typing space */
-  margin-bottom: 20px;
-  background: #ffffff;
-  border: 2px solid #e0e0e0;    /* Clean border */
-  border-radius: 12px;          /* Soft corners */
-  font-size: 1rem;
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  transition: border 0.3s;
+  width: 100%; padding: 18px 25px; margin-bottom: 20px; background: #ffffff;
+  border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; color: #333; font-family: inherit;
 }
-
-/* Force Dropdowns to be same height as text inputs */
-select.form-input {
-  height: 60px; 
-  cursor: pointer;
-}
-
-/* Hover/Focus Effects for Inputs */
-.form-input:focus { 
-  outline: none; 
-  border-color: var(--primary); /* Turns Navy when clicking */
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 31, 63, 0.1);
-}
-
-/* ========================================= */
+select.form-input { height: 60px; }
+.form-input:focus { outline: none; border-color: var(--primary); background: #fff; }
 
 /* --- GRID SYSTEMS --- */
 .grid-system { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
 
-/* Cards & Items */
 .modern-card, .gallery-item {
   background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 31, 63, 0.08); transition: var(--transition);
 }
 .gallery-item { height: 300px; position: relative; cursor: pointer; background: #000; }
 .modern-card:hover, .gallery-item:hover { transform: translateY(-10px); }
-
 .card-image-holder { height: 250px; overflow: hidden; }
 .card-image-holder img, .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
 .modern-card:hover .card-image-holder img, .gallery-item:hover img { transform: scale(1.1); }
 .card-details { padding: 30px; } .card-details h3 { color: var(--primary); }
-
 .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; pointer-events: none; }
 
 /* --- EXTRAS --- */
@@ -180,7 +136,7 @@ select.form-input {
 .branch-img-wrapper img { width: 100%; max-width: 100%; height: auto; border-radius: 15px; }
 
 /* Footer */
-footer { background-color: var(--primary); color: #bdc3c7; padding: 80px 0 30px; }
+footer { background-color: var(--primary); color: #bdc3c7; padding: 60px 0 30px; }
 .footer-content { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 30px; }
 .footer-logo-col img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 2px solid rgba(255,255,255,0.1); }
 .social-icons a { margin-right: 10px; color: white; }
@@ -193,20 +149,55 @@ footer { background-color: var(--primary); color: #bdc3c7; padding: 80px 0 30px;
 .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; z-index: 10001; }
 .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; } .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* --- MOBILE RESPONSIVE --- */
+/* =========================================
+   MOBILE RESPONSIVENESS (AGGRESSIVE FIXES)
+   ========================================= */
 @media (max-width: 768px) {
-  header { padding: 5px 0; }
-  .logo img { height: 45px; width: 45px; }
-  .nav-links { gap: 10px; font-size: 0.7rem; flex-wrap: wrap; justify-content: center; }
-  .nav-links li a { font-size: 0.8rem; }
-  .hero h1 { font-size: 2rem; }
-  .grid-system, .gallery-grid, .contact-wrapper, .footer-content, .branch-highlight { 
-    grid-template-columns: 1fr; padding: 20px; 
-  }
-  .branch-img-wrapper { order: -1; margin-bottom: 20px; }
-  .branch-highlight { padding: 30px; }
-  .stats-grid { flex-direction: column; gap: 40px; }
   
-  /* Mobile Button Fixes */
-  .filter-btn { padding: 8px 15px; font-size: 0.75rem; }
+  /* 1. Reset Typography (Shrink fonts drastically) */
+  h1 { font-size: 2rem !important; word-break: break-word; } /* Fit 'TRANSFORMING' */
+  h2 { font-size: 1.6rem !important; }
+  h3 { font-size: 1.3rem !important; }
+  p { font-size: 1rem !important; }
+
+  /* 2. Hero & Header */
+  .hero { height: 50vh; } /* Shorter hero on mobile */
+  header { padding: 10px 0; }
+  .logo img { height: 45px; width: 45px; } 
+  
+  /* 3. Navigation (Stacked & Small) */
+  .nav-links { 
+    gap: 15px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-top: 10px;
+  }
+  .nav-links li a { font-size: 0.75rem; text-transform: uppercase; }
+
+  /* 4. Layout Stacking (Make everything 1 column) */
+  .grid-system, .gallery-grid, .contact-wrapper, .footer-content, .branch-highlight { 
+    grid-template-columns: 1fr !important; 
+    gap: 30px;
+  }
+
+  /* 5. Fix Padding/Margins */
+  .section { padding: 40px 0; } /* Less padding between sections */
+  .container { padding: 0 15px; } /* More space for content */
+  
+  /* 6. Specific Component Fixes */
+  .branch-highlight { padding: 25px; }
+  .branch-img-wrapper { order: -1; } /* Image on top */
+  .contact-wrapper { padding: 25px; }
+  
+  /* 7. Stats Grid */
+  .stats-grid { flex-direction: column; gap: 30px; }
+  .stat-number { font-size: 2.5rem; } /* Smaller numbers */
+  
+  /* 8. Fix "Follow Us" and Long Text overflow */
+  .section-header p { font-size: 0.9rem !important; }
+  .modern-card, .gallery-item { margin-bottom: 10px; }
+  
+  /* 9. Buttons */
+  .cta-btn { width: 100%; text-align: center; padding: 14px 20px; font-size: 0.9rem; }
+  .filter-btn { flex: 1 1 40%; font-size: 0.7rem; padding: 8px 10px; text-align: center; }
 }

@@ -1,15 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Gallery Filtering ---
+
+    // --- 1. SMART HEADER (Hide on Scroll Down) ---
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling DOWN -> Hide Header
+            header.classList.add('header-hidden');
+        } else {
+            // Scrolling UP -> Show Header
+            header.classList.remove('header-hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    // --- 2. Stats Counter ---
+    const statsSection = document.querySelector('.stats-section');
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let started = false;
+
+    const startCount = (el) => {
+        const goal = parseInt(el.getAttribute('data-count'));
+        let count = 0;
+        // Faster logic for big numbers
+        if(goal > 1000) {
+            el.innerText = goal.toLocaleString() + (el.innerText.includes('m') ? '' : '+');
+            return;
+        }
+        const counter = setInterval(() => {
+            count++;
+            el.innerText = count + "+";
+            if (count == goal) clearInterval(counter);
+        }, 50);
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+            statNumbers.forEach(stat => startCount(stat));
+            started = true;
+        }
+    });
+
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // --- 3. Gallery & Lightbox ---
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    // Create Lightbox
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `<span class="close-lightbox">&times;</span><div class="lightbox-wrapper"></div>`;
+    document.body.appendChild(lightbox);
+    
+    const lightboxWrapper = lightbox.querySelector('.lightbox-wrapper');
+    const closeBtn = lightbox.querySelector('.close-lightbox');
 
+    // Filtering
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const filterValue = btn.getAttribute('data-filter');
-
             galleryItems.forEach(item => {
                 if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                     item.style.display = 'block';
@@ -20,59 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 2. Stats Counter Animation (NEW) ---
-    const statsSection = document.querySelector('.stats-section');
-    const statNumbers = document.querySelectorAll('.stat-number');
-    let started = false; // Function run switch
-
-    const startCount = (el) => {
-        const goal = parseInt(el.getAttribute('data-count'));
-        let count = 0;
-        const speed = 2000 / goal; // Adjust animation speed
-        
-        // Handle big numbers like 1,600,000 differently for smoothness
-        if(goal > 1000) {
-            el.innerText = goal.toLocaleString() + (el.innerText.includes('m²') ? 'm²' : '+');
-            return;
-        }
-
-        const counter = setInterval(() => {
-            count++;
-            el.innerText = count + "+";
-            if (count == goal) {
-                clearInterval(counter);
-            }
-        }, 50); // Speed of count
-    };
-
-    const statsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !started) {
-            statNumbers.forEach(stat => startCount(stat));
-            started = true;
-        }
-    });
-
-    if (statsSection) {
-        statsObserver.observe(statsSection);
-    }
-
-    // --- 3. Lightbox Logic ---
-    const lightbox = document.createElement('div');
-    lightbox.id = 'lightbox';
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = `<span class="close-lightbox">&times;</span><div class="lightbox-wrapper"></div>`;
-    document.body.appendChild(lightbox);
-
-    const lightboxWrapper = lightbox.querySelector('.lightbox-wrapper');
-    const closeBtn = lightbox.querySelector('.close-lightbox');
-
+    // Open Lightbox
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
             const hiddenVideo = item.querySelector('video source');
             const img = item.querySelector('img');
-
             lightboxWrapper.innerHTML = ''; 
-
+            
             if (hiddenVideo) {
                 const newVideo = document.createElement('video');
                 newVideo.src = hiddenVideo.getAttribute('src');
@@ -92,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Close Lightbox
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         lightboxWrapper.innerHTML = '';
@@ -101,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === lightbox) closeLightbox();
     });
 
-    // --- 4. Scroll Animation ---
+    // --- 4. Animation ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
