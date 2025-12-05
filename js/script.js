@@ -6,33 +6,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            // Scrolling DOWN -> Hide Header
             header.classList.add('header-hidden');
         } else {
-            // Scrolling UP -> Show Header
             header.classList.remove('header-hidden');
         }
         lastScrollY = window.scrollY;
     });
 
-    // --- 2. Stats Counter ---
+    // --- 2. STATS COUNTER (NEW: MOVING BIG NUMBERS) ---
     const statsSection = document.querySelector('.stats-section');
     const statNumbers = document.querySelectorAll('.stat-number');
     let started = false;
 
     const startCount = (el) => {
-        const goal = parseInt(el.getAttribute('data-count'));
+        const goal = parseFloat(el.getAttribute('data-count'));
         let count = 0;
-        // Faster logic for big numbers
-        if(goal > 1000) {
-            el.innerText = goal.toLocaleString() + (el.innerText.includes('m') ? '' : '+');
-            return;
-        }
+        
+        // Calculate step so all numbers finish in 2 seconds (2000ms)
+        const duration = 2000; 
+        const intervalTime = 30; // Update every 30ms
+        const steps = duration / intervalTime; 
+        const increment = goal / steps;
+
         const counter = setInterval(() => {
-            count++;
-            el.innerText = count + "+";
-            if (count == goal) clearInterval(counter);
-        }, 50);
+            count += increment;
+
+            if (count >= goal) {
+                count = goal;
+                clearInterval(counter);
+            }
+
+            // Special Formatting for specific stats
+            if (goal >= 1000000) {
+                // For 1.6M -> Formats numbers like 0.1M, 0.5M... 1.6M
+                el.innerText = (count / 1000000).toFixed(1) + "M+";
+            } else if (goal === 6000) {
+                // For 6000m² -> Formats with comma and unit
+                el.innerText = Math.floor(count).toLocaleString() + "m²";
+            } else {
+                // For small numbers like 12
+                el.innerText = Math.floor(count);
+            }
+        }, intervalTime);
     };
 
     const statsObserver = new IntersectionObserver((entries) => {
@@ -44,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (statsSection) statsObserver.observe(statsSection);
 
-    // --- 3. Gallery & Lightbox ---
+    // --- 3. GALLERY & LIGHTBOX ---
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
@@ -110,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === lightbox) closeLightbox();
     });
 
-    // --- 4. Animation ---
+    // --- 4. SCROLL ANIMATION ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
